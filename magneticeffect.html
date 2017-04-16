@@ -32,7 +32,7 @@
 
   <script>
     $(document).ready(function(){
-      $("#sub1").draggable({snap:true, snapTolerance:100});/*this will make the first sub element magnetize to the two below since they are draggable elements, the snapTolerance default value is 10 pixels, here we made it 100px so it will be magnetic up to 100px away from the draggable items*/
+      $("#sub1").draggable({snap:"#sub2", snapTolerance:100});/*this will make the first sub element magnetize to the two below since they are draggable elements, the snapTolerance default value is 10 pixels, here we made it 100px so it will be magnetic up to 100px away from the draggable items*/
       $("#sub2, #sub3").draggable();
     });
   </script>
