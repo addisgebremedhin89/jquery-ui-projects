@@ -34,6 +34,9 @@
     $(document).ready(function(){
       $(".sub").draggable();
       $("#sub2").draggable({helper:"clone", opacity: 0.7}); /*there will be a cloned object that looks just like sub2 object that will move and the original object never leaves its position */
+      $(".sub").draggable({helper: function(){
+        return $("<div style='border: 2px solid black; background: black; color: white'>Custom helper<div>")
+      }});
     });
   </script>
 </head>
