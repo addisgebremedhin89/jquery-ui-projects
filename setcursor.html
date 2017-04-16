@@ -27,9 +27,9 @@
 
   <script>
     $(document).ready(function(){
-      $("#sub1").draggable({cursor:"grab"}); /*setting a grab cursor type*/
-      $("#sub2").draggable({cursor:"move"}); /*setting a grab cursor type*/
-      $("#sub3").draggable({cursor:"crosshair"}); /*setting a grab cursor type*/
+      $("#sub1").draggable({cursor:"grab", cursorAt:{left:5, top:5}}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above*/
+      $("#sub2").draggable({cursor:"move", cursorAt:{bottom:0}}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above*/
+      $("#sub3").draggable({cursor:"crosshair", cursorAt:{right:5, bottom:5}}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above*/
     });
   </script>
 </head>
