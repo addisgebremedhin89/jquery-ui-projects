@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interaction: Draggable</title>
+  <style>
+    #box
+    {
+      width: 100px;
+      height: 100px;
+      background: pink;
+      border: 1px solid black;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("p").draggable();
+    });
+  </script>
+</head>
+
+<body>
+
+<p>This is my message!!!</p>
+<div id="box"></div>
+
+</body>
+
+
+</html>
