@@ -31,7 +31,8 @@
       $("#sub1").draggable({axis:"x"}); /*restricting direction to only x axis
       $("#sub2").draggable({axis:"y"}); /*restricting direction to only y axis
       $("#sub3").draggable({containment: "#main"}); /*restricting draggability boundary to main div element*/
-      $(".sub, p").draggable({cancel: "#sub2"});/*everything but the green child are draggable*/
+      $(".sub, p").draggable({cancel: "#sub2, #sub1"});/*everything but the green child and red are draggable*/
+      $("p").draggable({disabled: true});
     });
   </script>
 </head>
