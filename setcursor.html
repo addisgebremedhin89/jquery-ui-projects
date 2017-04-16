@@ -36,6 +36,9 @@
       $("#sub2").draggable({cursor:"move", cursorAt:{bottom:0}, cancel: "p", grid:[0, 100]}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above  also the handle option restricts draggable function when p element clicked on*/
       $("#sub3").draggable({cursor:"crosshair", cursorAt:{right:5, bottom:5}, grid:[50, 100]}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above, the grid option allows us to make the item draggable by 50 px on x axis and 100 px on the y axis*/
       $("#sub4").draggable({revert:true, revertDuration:100});/*using the revert option we can set the value to true so it reverts to original positoin after being dragged*/
+      $("#sub5").draggable({revert:function()
+      {
+        $("#sub5").css("background", "purple"); return true;}});/*revert values can also be a function like this one that will change the background color when reverted*/
     });
   </script>
 </head>
@@ -48,7 +51,7 @@
     <div class="sub" id="sub2" style="background: green;"><p>Not draggable if you click me</p></div>
     <div class="sub" id="sub3" style="background: blue;"></div>
     <div class="sub" id="sub4" style="background: orange;"></div>
-
+    <div class="sub" id="sub5" style="background: pink;"></div>
   </div>
 
 </body>
