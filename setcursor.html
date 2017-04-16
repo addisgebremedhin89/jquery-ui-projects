@@ -20,6 +20,11 @@
       margin: 5px;
       float: left;
     }
+    
+  p
+  {
+    border:1px solid black;
+  }
   </style>
    <link rel="stylesheet" href="jquery-ui.css">
    <script src="jquery.js"></script>
@@ -27,7 +32,7 @@
 
   <script>
     $(document).ready(function(){
-      $("#sub1").draggable({cursor:"grab", cursorAt:{left:5, top:5}}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above*/
+      $("#sub1").draggable({cursor:"grab", cursorAt:{left:5, top:5}, handle: "p"}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above*/
       $("#sub2").draggable({cursor:"move", cursorAt:{bottom:0}}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above*/
       $("#sub3").draggable({cursor:"crosshair", cursorAt:{right:5, bottom:5}}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above*/
     });
@@ -38,7 +43,7 @@
 
   <div id="main">
 
-    <div class="sub" id="sub1" style="background: red;"></div>
+    <div class="sub" id="sub1" style="background: red;"><p>Click here to move me</p></div>
     <div class="sub" id="sub2" style="background: green;"></div>
     <div class="sub" id="sub3" style="background: blue;"></div>
     
