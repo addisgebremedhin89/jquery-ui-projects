@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Interaction: Helper</title>
+  <title>Interaction: Draggable</title>
   <style>
     #main
     {
@@ -32,22 +32,22 @@
 
   <script>
     $(document).ready(function(){
-      $(".sub").draggable();
-      $("#sub2").draggable({helper:"clone", opacity: 0.7}); /*there will be a cloned object that looks just like sub2 object that will move and the original object never leaves its position */
-      $(".sub").draggable({helper: function(){
-        return $("<div style='border: 2px solid black; background: black; color: white'>Custom helper<div>")
-      }});
+      $("#sub1").draggable({snap:true});/*this will make the first sub element magnetize to the two below since they are draggable elements*/
+      $("#sub2, #sub3").draggable();
     });
   </script>
 </head>
 
 <body>
-  <div>
+  <div id="main1">
     <div class="sub" id="sub1" style="background: red;"></div>
     <div class="sub" id="sub2" style="background: green;"></div>
     <div class="sub" id="sub3" style="background: blue;"></div>
   </div>
 
+  <div id="main2">
+
+  </div>
 </body>
 
 
