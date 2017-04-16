@@ -30,6 +30,7 @@
       /*$(".sub").draggable();*/
       $("#sub1").draggable({axis:"x"}); /*restricting direction to only x axis*/
       $("#sub2").draggable({axis:"y"}); /*restricting direction to only y axis*/
+      $("#sub3").draggable({containment: "#main"}); /*restricting draggability boundary to main div element*/
     });
   </script>
 </head>
