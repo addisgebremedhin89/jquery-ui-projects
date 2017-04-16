@@ -33,7 +33,7 @@
   <script>
     $(document).ready(function(){
       $("#sub1").draggable({cursor:"grab", cursorAt:{left:5, top:5}, handle: "p"}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above also the handle option allows the box to be dragggable only when p tag selected*/
-      $("#sub2").draggable({cursor:"move", cursorAt:{bottom:0}, cancel: "p"}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above  also the handle option restricts draggable function when p element clicked on*/
+      $("#sub2").draggable({cursor:"move", cursorAt:{bottom:0}, cancel: "p", grid:[0, 100]}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above  also the handle option restricts draggable function when p element clicked on*/
       $("#sub3").draggable({cursor:"crosshair", cursorAt:{right:5, bottom:5}, grid:[50, 100]}); /*setting a grab cursor type, cursorAt option positions the cursor on the object as specified above, the grid option allows us to make the item draggable by 50 px on x axis and 100 px on the y axis*/
     });
   </script>
