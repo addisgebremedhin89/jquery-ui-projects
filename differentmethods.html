@@ -45,6 +45,12 @@
       $("#btnSet").click(function(){
         $("#sub1").draggable("option", "cursor", "grab");
       });/*3 parameters will be passed for set option, option is the name of method, name of option you want to set value for and third one is the actual value you want to set*/
+      $("#btnGetOption").click(function(){
+        var obj = $("#sub3").draggable("option");
+        $.each(obj, function(key, value){
+          alert(key + "=" + value);
+        })
+      });/*this method allows us to see all of the options and their corresponding values*/
     });
   </script>
 </head>
