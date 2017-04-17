@@ -19,7 +19,8 @@
 
   <script>
     $(document).ready(function(){
-      $("img, div").resizable({handles: "all"});/*the option for controlling direction of resizability is handles and the value we added is all so all sizes are resizable, you can also do ({handles: "n, se, e, w"})*/
+      $("img, div").resizable({handles: "all", autoHide: "true"});/*the option for controlling direction of resizability is handles and the value we added is all so all sizes are resizable, you can also do ({handles: "n, se, e, w"}) there are a total of 9 values*/
+      /*autoHide option allows you to hide the resize icon on an image, and will only appear when you hover over an item giving you the alert that this item is resizable*/
     });/*simply using the resizable method we can resize any or all elements as we selected above*/
     
     /*now we will focus on controlling which points or point we are able to drag and resize a specified element*/
