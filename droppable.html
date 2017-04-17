@@ -14,14 +14,13 @@
       background: purple;
     }
     
-    #area1 #area2
+    #area1, #area2
     {
       width: 500px;
       height: 500px;
-      border: 5px solid black;
     }
     
-    #main, #area
+    #main, #area1, #area2
     {
       float: left;
       margin: 25px;
@@ -49,14 +48,14 @@
 <div id="area"></div>-->
 
 <div id="main">
-  <div id="item1" class="item" style="background: red;"></div>
+  <div id="item1" class="item" style="background: pink;"></div>
   <div id="item2" class="item" style="background: purple;"></div>
   <div id="item3" class="item" style="background: pink;"></div>
   <div id="item4" class="item" style="background: purple;"></div>
 </div>
 
-<div id="area1"></div>
-<div id="area2"></div>
+<div id="area1" style="border: 5px solid purple;"></div>
+<div id="area2" style="border: 5px solid pink;"></div>
 </body>
 
 
