@@ -14,7 +14,7 @@
       background: purple;
     }
     
-    #area
+    #area1 #area2
     {
       width: 500px;
       height: 500px;
@@ -36,7 +36,7 @@
   <script>
     $(document).ready(function(){
       $(".item").draggable();
-      $("#area").droppable({accept: "#item2", drop:function(){/*weve restricted the droppable target to only accept item2 and show the message only for item2*/
+      $("#area").droppable({accept: "#item2", drop:function(){/*we've restricted the droppable target to only accept item2 and show the message only for item2*/
         alert("The item is dropped!!")
       }});
     });
@@ -52,9 +52,11 @@
   <div id="item1" class="item" style="background: red;"></div>
   <div id="item2" class="item" style="background: purple;"></div>
   <div id="item3" class="item" style="background: pink;"></div>
+  <div id="item4" class="item" style="background: purple;"></div>
 </div>
 
-<div id="area"></div>
+<div id="area1"></div>
+<div id="area2"></div>
 </body>
 
 
