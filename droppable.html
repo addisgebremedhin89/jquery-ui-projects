@@ -5,17 +5,15 @@
   <!-- this is an extension of draggable since droppable creates a target for draggable elements-->
   <style>
   
-    body
-    {
-      display: flex;
-    }
-    #item
+  
+    .item
     {
       width: 100px;
       height: 100px;
-      background: purple;
       border: 1px solid black;
-      margin: 2px;
+      margin: 5px;
+      padding: 5px;
+      background: purple;
     }
     
     #area
@@ -23,7 +21,11 @@
       width: 500px;
       height: 500px;
       border: 5px solid black;
-      margin: 2px;
+    }
+    #main, #area
+    {
+      float: left;
+      margin: 25px;
     }
   </style>
   
@@ -33,9 +35,9 @@
 
   <script>
     $(document).ready(function(){
-      $("#item").draggable();
+      $(".item").draggable();
       $("#area").droppable({drop:function(){
-        alert("The item isdropped!!")
+        alert("The item is dropped!!")
       }});
     });
   </script>
@@ -43,10 +45,16 @@
 
 <body>
 
+<!--<div id="item" style=""></div>
+<div id="area"></div>-->
 
-<div id="item" style=""></div>
+<div id="main">
+  <div id="item1" class="item" style="background: red;"></div>
+  <div id="item2" class="item" style="background: purple;"></div>
+  <div id="item3" class="item" style="background: pink;"></div>
+</div>
+
 <div id="area"></div>
-
 </body>
 
 
