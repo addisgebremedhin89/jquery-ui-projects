@@ -45,7 +45,7 @@
       $("#item").draggable();
       $("#parent, #child").droppable({greedy: true, drop:function(){
           alert("The item is dropped in" + $(this).attr("id"));
-      }});
+      }});/*using the greedy option and setting it true allows the nested element, child here, to accept the draggable item all on its own without the parent element accepting it aswell*/
     });
   </script>
 </head>
