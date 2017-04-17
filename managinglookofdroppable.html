@@ -21,8 +21,12 @@
       height: 300px;
       margin:50px;
       border: 2px solid black;
+      float: left;
     }
-    
+    .startmoving
+    {
+      background: black;
+    }
   </style>
   
   <link rel="stylesheet" href="jquery-ui.css">
@@ -33,9 +37,9 @@
 
     $(document).ready(function(){
       $(".item").draggable();
-      $("#area").droppable({accept:"#item2", drop:function(){
+      $("#area").droppable({activeClass:"startmoving", accept:"#item2", drop:function(){
           alert("The item is dropped");
-      }});
+      }});/*with the activeClass option we applied a new class in line 26 and styled it to a black background so when we use the activeClass option and give it the value of the class we created the accepted purple div item when selected will result in the area turning black*/
     });
   </script>
 </head>
