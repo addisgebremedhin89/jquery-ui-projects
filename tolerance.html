@@ -31,7 +31,10 @@
   <script>
     $(document).ready(function(){
       $("#item").draggable();
-      $("#area").droppable({tolerance: "touch", drop:function(){
+      /*$("#area").droppable({tolerance: "touch", drop:function(){
+          alert("The item is dropped"); tolerance option has a value
+        touch which means when the borders touch it is considered dropped*/
+      $("#area").droppable({tolerance: "fit", drop:function(){
           alert("The item is dropped"); /*tolerance option has a value
         touch which means when the borders touch it is considered dropped*/
       }})
