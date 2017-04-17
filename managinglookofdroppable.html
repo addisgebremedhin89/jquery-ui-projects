@@ -41,7 +41,7 @@
 
     $(document).ready(function(){
       $(".item").draggable();
-      $("#area").droppable({activeClass:"startmoving", hoverClass: "reached", accept:"#item2", drop:function(){
+      $("#area").droppable({activeClass:"startmoving", tolearnce: "touch", hoverClass: "reached", accept:"#item2", drop:function(){
           alert("The item is dropped");
           $(this).css("background", "blue");/*here when the item has bene dropped we decided to make the background finally turn one last color, blue*/
       }});/*with the activeClass option we applied a new class in line 26 and styled it to a black background so when we use the activeClass option and give it the value of the class we created the accepted purple div item when selected will result in the area turning black*/ /*now the reachedClass is applied to the same purple item and when the item is dropped (hovers over the droppable area) the class we created will result in it changing to background color green*/
