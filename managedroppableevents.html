@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Droppable: Manage Events</title>
+  <!--options are create drop over out activate and deactivate-->
+  <!--create event is triggered when droppable element is created-->
+  <!--drop event is triggered when an accepted draggable element is dropped into the droppable area-->
+  <!--over event is triggered when an accepted draggable element is dragged over the droppable area (when 50 percent of element is in the the element this will trigger)-->
+  <!--out event is triggered when an accepted draggable element is moved out of the droppable area (when 50 percent of element is out of the element this will trigger)-->
+  <!--activate event is triggered when an accepted droppable element starts moving-->
+  <!--activate event is triggered when an accepted droppable element stops moving-->
+  <style>
+    #target
+    {
+      width: 500px;
+      height: 500px;
+      border: 2px solid black;
+    }
+    #item
+    {
+      width: 100px;
+      height: 100px;
+      background: pink;
+      margin: 10px;
+    }
+    #main, #area
+    {
+      float: left;
+      margin: 20px;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#item").draggable();
+      $("#target").droppable({
+        create:function(){
+          $("#status").html("A droppable is created!!!");
+        },
+        drop:function(){
+          $("#status").html("The item is dropped!!!");
+        },
+        over:function(){
+          $("#status").html("The draggable is dragging over the droppable!!!");
+        },
+        out:function(){
+          $("#status").html("The draggable is dragged out of the droppable area!!!");
+        },
+        activate:function(){
+          $("#status").html("The draggable started moving!!!");
+        },
+        deactivate:function(){
+          alert("The draggable stopped moving!!!");
+        },
+      });
+    });
+  </script>
+</head>
+
+<body>
+<div id="item"></div>
+<div id="target"></div>
+<div id="status"></div>
+</body>
+
+
+</html>
