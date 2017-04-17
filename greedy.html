@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Droppable: Greedy</title>
+  <!-- in case of nested droppable elements you can control which element will accept the draggable element-->
+  <style>
+    
+    body {
+      display: flex;
+    }
+    #item
+    {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      margin: 5px;
+      padding: 5px;
+      background: pink;
+    }
+    
+    #parent
+    {
+      border: 2px solid purple;
+      width: 400px;
+      height: 400px;
+    }
+    
+    #child
+    {
+      border: 2px solid grey;
+      width: 150px;
+      height: 150px;
+      margin: 100px auto;
+    }
+    
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+
+    $(document).ready(function(){
+      $("#item").draggable();
+      $("#parent", "child").droppable({drop:function(){
+          alert("The item is dropped!!");
+      }});
+    });
+  </script>
+</head>
+<!-- tolerance value is intersect by default, so once a draggable item is atleast 50 percent in the droppable item it is considered dropped-->
+<body>
+
+  <div id="item"></div>
+
+  <div id="parent"><div id="child"></div></div>
+
+</body>
+
+
+</html>
