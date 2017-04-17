@@ -38,7 +38,13 @@
       });/*enables draggable functionality for sub1*/
       $("#btnDestroy").click(function(){
         $("#sub2").draggable("destroy");
-      });/*enables draggable functionality for sub1*/
+      });/*permanentl destroys draggable functionality for sub2*/
+        $("#btnGet").click(function(){
+          alert($("#sub3").draggable("option", "revertDuration"));
+      });/*provides pop up alert for draggable object sub3*/
+      $("#btnSet").click(function(){
+        $("#sub1").draggable("option", "cursor", "grab");
+      });/*3 parameters will be passed for set option, option is the name of method, name of option you want to set value for and third one is the actual value you want to set*/
     });
   </script>
 </head>
@@ -53,9 +59,9 @@
   <button id="btnDisable">Disable</button>
   <button id="btnEnable">Enable</button>
   <button id="btnDestroy">Destroy</button>
-  <button id="btnGetOption">Get Option</button>
-  <button id="btnSetOption">Set Option</button>
-  <button id="btnSetOption">Get All Options</button>
+  <button id="btnGet">Get Option</button>
+  <button id="btnSet">Set Option</button>
+  <button id="btnGetOption">Get All Options</button>
 </body>
 
 
