@@ -29,8 +29,8 @@
   <script>
     $(document).ready(function(){
       $(".item").draggable();
-      $("#item1").draggable({revert: "invalid"});
-      $("#item2").draggable({revert: "valid"});
+      $("#item1").draggable({revert: "invalid"});/*when the dropped element is dropped in the area it wont revert back to its original position unless its dropped outside of the droppable area*/
+      $("#item2").draggable({revert: "valid"});/*when the dropped element is dropped in the area it will revert back to its original position but if its dropped outside of the droppable area it wont*/
       $("#area").droppable({drop:function(){
          alert("The item is dropped");
       }})
