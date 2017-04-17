@@ -45,6 +45,9 @@
       $("#btnSet").click(function(){
         $("#sub1").draggable("option", "cursor", "grab");
       });/*3 parameters will be passed for set option, option is the name of method, name of option you want to set value for and third one is the actual value you want to set*/
+      $("#btnSet").click(function(){
+        $("#sub1").draggable("option", {"cursor":"grab", "revert":true});
+      });/*here we see we can set the value of multiple options at the same time*/
       $("#btnGetOption").click(function(){
         /* now if we comment this out we can see another way of using this option
         var obj = $("#sub3").draggable("option");
