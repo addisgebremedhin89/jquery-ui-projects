@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Droppable: Managing Appearance</title>
+  <!-- options are active class and hover class-->
+  <style>
+    
+    .item
+    {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      margin: 5px;
+      padding: 5px;
+    }
+    
+    #area
+    {
+      display: inline-block;
+      width: 300px;
+      height: 300px;
+      margin:50px;
+      border: 2px solid black;
+    }
+    
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+
+    $(document).ready(function(){
+      $(".item").draggable();
+      $("#area").droppable({accept:"#item2", drop:function(){
+          alert("The item is dropped");
+      }});
+    });
+  </script>
+</head>
+<!-- tolerance value is intersect by default, so once a draggable item is atleast 50 percent in the droppable item it is considered dropped-->
+<body>
+
+  <div class="item" id="item" style="background: pink;"></div>
+  <div class="item" id="item2" style="background: purple;"></div>
+  <div class="item" id="item3" style="background: grey;"></div>
+
+  <div id="area"></div>
+
+</body>
+
+
+</html>
