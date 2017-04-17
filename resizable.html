@@ -19,7 +19,7 @@
 
   <script>
     $(document).ready(function(){
-      $("img, div").resizable();
+      $("img, div").resizable({handles: "all"});/*the option for controlling direction of resizability is handles and the value we added is all so all sizes are resizable, you can also do ({handles: "n, se, e, w"})*/
     });/*simply using the resizable method we can resize any or all elements as we selected above*/
     
     /*now we will focus on controlling which points or point we are able to drag and resize a specified element*/
