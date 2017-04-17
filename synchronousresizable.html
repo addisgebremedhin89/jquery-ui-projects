@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interaction: Synchronous Resizable</title>
+  <style>
+    .box
+    {
+      width: 100px;
+      height: 100px;
+      background: pink;
+      border: 1px solid black;
+      margin: 50px;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#box1").resizable({alsoResize:"#box2"});
+      /*when resizing the pink box the purple box simultaneously gets resized accordingly*/
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="box" id="box1" style="background: pink;"></div>
+<div class="box" id="box2" style="background: purple;"></div>
+
+
+</body>
+
+
+</html>
