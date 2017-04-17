@@ -37,7 +37,7 @@
   <script>
     $(document).ready(function(){
       $("#item").draggable();
-      $("#target").droppable({
+      $("#target").droppable({tolerance:"touch",
         create:function(){
           $("#status").html("A droppable is created!!!");
         },
