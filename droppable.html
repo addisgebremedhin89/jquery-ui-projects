@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interaction: Droppable</title>
+  <!-- this is an extension of draggable since droppable creates a target for draggable elements-->
+  <style>
+  
+    body
+    {
+      display: flex;
+    }
+    #item
+    {
+      width: 100px;
+      height: 100px;
+      background: purple;
+      border: 1px solid black;
+      margin: 2px;
+    }
+    
+    #area
+    {
+      width: 500px;
+      height: 500px;
+      border: 5px solid black;
+      margin: 2px;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#item").draggable();
+    });
+  </script>
+</head>
+
+<body>
+
+
+<div id="item" style=""></div>
+<div id="area"></div>
+
+</body>
+
+
+</html>
