@@ -43,7 +43,7 @@
 
     $(document).ready(function(){
       $("#item").draggable();
-      $("#parent", "child").droppable({drop:function(){
+      $("#parent, #child").droppable({drop:function(){
           alert("The item is dropped!!");
       }});
     });
