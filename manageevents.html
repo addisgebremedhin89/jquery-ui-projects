@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interaction: Manage Events</title>
+  <style>
+    #item
+    {
+      width: 100px;
+      height: 100px;
+      background: pink;
+      border: 1px solid black;
+      margin: 2px;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#btnCreate").click(function()){
+        $("#item").draggable();
+      }; <!-- item element becomes draggable when create button clicked-->
+    });
+  </script>
+</head>
+
+<body>
+
+<div id="item"></div>
+
+<button id="btnCreate">Create</button>
+
+<button id="btnCreate">Create</button>
+
+<div id="status"></div>
+
+</body>
+
+
+</html>
