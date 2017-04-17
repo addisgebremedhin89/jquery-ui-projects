@@ -4,7 +4,7 @@
   <title>Tolerance: Deciding when element considered Dropped</title>
   <!-- this option is used to help us decide when an element has dropped into a droppable element-->
   <style>
-    .item
+    #item
     {
       width: 100px;
       height: 100px;
@@ -14,17 +14,13 @@
       background: purple;
     }
     
-    #area1, #area2
+    #area
     {
+      border: 2px solid purple;
       width: 400px;
       height: 400px;
     }
     
-    #main, #area1, #area2
-    {
-      float: left;
-      margin: 10px;
-    }
     
   </style>
   
@@ -35,13 +31,14 @@
   <script>
     $(document).ready(function(){
       $("#item").draggable();
-      $("#area").droppable({drop:function(){
-          alert("The item is dropped");
+      $("#area").droppable({tolerance: "touch", drop:function(){
+          alert("The item is dropped"); /*tolerance option has a value
+        touch which means when the borders touch it is considered dropped*/
       }})
     });
   </script>
 </head>
-
+<!-- tolerance value is intersect by default, so once a draggable item is atleast 50 percent in the droppable item it is considered dropped-->
 <body>
 
   <div id="item"></div>
