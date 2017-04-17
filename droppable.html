@@ -34,6 +34,9 @@
   <script>
     $(document).ready(function(){
       $("#item").draggable();
+      $("#area").droppable({drop:function(){
+        alert("The item isdropped!!")
+      }});
     });
   </script>
 </head>
