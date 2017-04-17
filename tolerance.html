@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tolerance: Deciding when element considered Dropped</title>
+  <!-- this option is used to help us decide when an element has dropped into a droppable element-->
+  <style>
+    .item
+    {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      margin: 5px;
+      padding: 5px;
+      background: purple;
+    }
+    
+    #area1, #area2
+    {
+      width: 400px;
+      height: 400px;
+    }
+    
+    #main, #area1, #area2
+    {
+      float: left;
+      margin: 10px;
+    }
+    
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#item").draggable();
+      $("#area").droppable({drop:function(){
+          alert("The item is dropped");
+      }})
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="item"></div>
+
+  <div id="area"></div>
+
+</body>
+
+
+</html>
