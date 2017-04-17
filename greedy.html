@@ -44,7 +44,7 @@
     $(document).ready(function(){
       $("#item").draggable();
       $("#parent, #child").droppable({drop:function(){
-          alert("The item is dropped!!");
+          alert("The item is dropped in" + $(this).attr("id"));
       }});
     });
   </script>
