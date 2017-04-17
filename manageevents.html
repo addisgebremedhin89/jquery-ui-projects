@@ -21,9 +21,12 @@
     $(document).ready(function(){
       $("#btnCreate").click(function(){
         $("#item").draggable({create:function(){
-          alert("A draggable element is created!!!")
+          alert("A draggable element is created!!!");
+        }, /*item element becomes draggable when create button clicked*/
+          start:function(){
+            $("#item").css("background", "orange");
         }});
-      }); /*item element becomes draggable when create button clicked*/
+      });
     });
   </script>
 </head>
