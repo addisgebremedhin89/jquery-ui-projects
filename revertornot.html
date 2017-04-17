@@ -29,6 +29,8 @@
   <script>
     $(document).ready(function(){
       $(".item").draggable();
+      $("#item1").draggable({revert: "invalid"});
+      $("#item2").draggable({revert: "valid"});
       $("#area").droppable({drop:function(){
          alert("The item is dropped");
       }})
