@@ -25,6 +25,12 @@
         }, /*item element becomes draggable when create button clicked*/
           start:function(){
             $("#item").css("background", "orange");
+        },/*when element dragged color changes*/
+          drag:function(){
+            $("#status").html("The element is moving!!");
+          },
+          stop:function(){
+            $("#status").html("The element stopped moving!!");
         }});
       });
     });
