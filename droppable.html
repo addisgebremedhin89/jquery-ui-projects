@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Interaction: Droppable</title>
+  <title>Interaction: Droppable-Accept and Scope Options</title>
   <!-- this is an extension of draggable since droppable creates a target for draggable elements-->
   <style>
     .item
@@ -16,14 +16,14 @@
     
     #area1, #area2
     {
-      width: 500px;
-      height: 500px;
+      width: 400px;
+      height: 400px;
     }
     
     #main, #area1, #area2
     {
       float: left;
-      margin: 25px;
+      margin: 10px;
     }
     
   </style>
@@ -34,9 +34,17 @@
 
   <script>
     $(document).ready(function(){
-      $(".item").draggable();
-      $("#area").droppable({accept: "#item2", drop:function(){/*we've restricted the droppable target to only accept item2 and show the message only for item2*/
-        alert("The item is dropped!!")
+     /* $(".item").draggable();
+        $("#area").droppable({accept: "#item2", drop:function(){ we've restricted the droppable target to only accept item2 and show the message only for item2
+              alert("The item is dropped!!")
+      }});*/
+      $("#item1, #item3").draggable({scope:"pink"});
+      $("#item2, #item4").draggable({scope:"purple"});
+      $("#area1").droppable({scope:"purple", drop:function(){
+          alert("A purple item is dropped");
+      }});
+      $("#area2").droppable({scope:"pink", drop:function(){
+          alert("A pink item is dropped");
       }});
     });
   </script>
