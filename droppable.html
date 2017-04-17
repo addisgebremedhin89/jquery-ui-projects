@@ -4,8 +4,6 @@
   <title>Interaction: Droppable</title>
   <!-- this is an extension of draggable since droppable creates a target for draggable elements-->
   <style>
-  
-  
     .item
     {
       width: 100px;
@@ -22,11 +20,13 @@
       height: 500px;
       border: 5px solid black;
     }
+    
     #main, #area
     {
       float: left;
       margin: 25px;
     }
+    
   </style>
   
   <link rel="stylesheet" href="jquery-ui.css">
@@ -36,7 +36,7 @@
   <script>
     $(document).ready(function(){
       $(".item").draggable();
-      $("#area").droppable({drop:function(){
+      $("#area").droppable({accept: "#item2", drop:function(){/*weve restricted the droppable target to only accept item2 and show the message only for item2*/
         alert("The item is dropped!!")
       }});
     });
