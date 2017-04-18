@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interaction: Restricting Resizing</title>
+  <style>
+    #main
+    {
+      width: 400px;
+      height: 400px;
+      border: 1px solid black;
+      margin: 50px;
+    }
+    
+    .box
+    {
+      width: 150px;
+      height: 150px;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#box").resizable();
+      /*options include minHeight maxHeight minWidth maxWidth containment lastly to restrict the boundary of the resizable*/
+    });
+  </script>
+</head>
+
+<body>
+
+<div id="main">
+<div class="box" id="box1" style="background: grey;"></div>
+<div class="box" id="box2" style="background: pink;"><p>Neque pero quisquan est, qui doloreen 1 psum qula dolar sit amet, connector adeptqm</p></div>
+</div>
+
+</body>
+
+
+</html>
