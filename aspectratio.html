@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resizable:  Aspect Ratio</title>
+  <style>
+    #main
+    {
+      width: 800px;
+      height: 400px;
+      border: 2px solid black;
+      margin: 0px auto;
+    }
+    
+    .box
+    {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      float: left;
+      margin: 20px;
+    }
+    .custom-helper {
+      background: silver;
+      border: 1px solid black;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $(".box").resizable({aspectRatio:true,});/*this option allows us to be true to our original dimensions by allowing the resizable element to grow on the x and y axis simultaneously*/
+    });
+  </script>
+</head>
+
+<body>
+
+<div id="main">
+<div class="box" id="box1" style="background: purple;"></div>
+<div class="box" id="box2" style="background: pink;"></div>
+</div>
+
+</body>
+
+
+</html>
