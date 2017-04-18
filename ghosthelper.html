@@ -19,6 +19,10 @@
       float: left;
       margin: 20px;
     }
+    .custom-helper {
+      background: silver;
+      border: 1px solid black;
+    }
   </style>
   
   <link rel="stylesheet" href="jquery-ui.css">
@@ -27,7 +31,9 @@
 
   <script>
     $(document).ready(function(){
-      $(".box").resizable({ghost: true});/*this option allows us to see the original position of the element we are resizing while the resizing is transparent*/
+      $("#box1").resizable({ghost: true});/*this option allows us to see the original position of the element we are resizing while the resizing is transparent*/
+      $("#box2").resizable({ghost: true, helper: "custom-helper"});
+      /*here we customized the ghost option using a new class from row 22, this is used if you dont want transparency instead you want your own type of helper*/
     });
   </script>
 </head>
