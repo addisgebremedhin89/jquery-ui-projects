@@ -17,6 +17,7 @@
       height: 200px;
       border: 1px solid black;
       float: left;
+      margin: 20px;
     }
   </style>
   
@@ -26,8 +27,7 @@
 
   <script>
     $(document).ready(function(){
-      $("#box").resizable({ghost: true});
-
+      $(".box").resizable({ghost: true});
     });
   </script>
 </head>
@@ -36,7 +36,7 @@
 
 <div id="main">
 <div class="box" id="box1" style="background: purple;"></div>
-<div class="box" id="box2" style="background: pink;">/div>
+<div class="box" id="box2" style="background: pink;"></div>
 </div>
 
 </body>
