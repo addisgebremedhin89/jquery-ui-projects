@@ -29,7 +29,7 @@
     $(document).ready(function(){
       $("#box1").resizable({minHeight:20, maxHeight:300});
       /*options include minHeight maxHeight minWidth maxWidth containment lastly to restrict the boundary of the resizable*/
-      $("#box2").resizable(minHeight:140, maxHeight:300, minWidth:150, maxWidth:220);
+      $("#box2").resizable({minHeight:140, maxHeight:300, minWidth:150, maxWidth:220});
     });
   </script>
 </head>
