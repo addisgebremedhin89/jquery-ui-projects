@@ -27,9 +27,9 @@
 
   <script>
     $(document).ready(function(){
-      $("#box1").resizable();
+      $("#box1").resizable({minHeight:20, maxHeight:300});
       /*options include minHeight maxHeight minWidth maxWidth containment lastly to restrict the boundary of the resizable*/
-      $("#box2").resizable();
+      $("#box2").resizable(minHeight:140, maxHeight:300, minWidth:150, maxWidth:220);
     });
   </script>
 </head>
@@ -38,7 +38,7 @@
 
 <div id="main">
 <div class="box" id="box1" style="background: grey;"></div>
-<div class="box" id="box2" style="background: pink;"><p>Neque pero quisquan est, qui doloreen 1 psum qula dolar sit amet, connector adeptqm</p></div>
+<div class="box" id="box2" style="background: pink;"><p>Neque porro quisquam est, qui dolorem ipsum quia dolar sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem</p></div>
 </div>
 
 </body>
