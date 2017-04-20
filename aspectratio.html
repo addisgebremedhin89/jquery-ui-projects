@@ -31,8 +31,11 @@
 
   <script>
     $(document).ready(function(){
-      $(".box").resizable({aspectRatio:true,});/*this option allows us to be true to our original dimensions by allowing the resizable element to grow on the x and y axis simultaneously*/
-    });
+      $("#box1").resizable({aspectRatio:true});/*this option allows us to be true to our original dimensions by allowing the resizable element to grow on the x and y axis simultaneously*/
+      $("#box2").resizable({aspectRatio:3, stop:function(){
+        alert("Height: " +$(this).css("height")+ "\n Width: " +$(this).css("width"));
+    }});
+      });
   </script>
 </head>
 
