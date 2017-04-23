@@ -18,17 +18,17 @@
     font-size:20px;
     text-align:center;
   }
-  /*#fruits.ui-selecting
+  #fruits .ui-selecting
   {
     background:purple;
     color:white;
   }
-  #fruits.ui-selected
+  #fruits .ui-selected
   {
     background:maroon;
     color:white;
     font-size:25px;
-  }*/
+  }
   
   </style>
   
@@ -39,7 +39,9 @@
   <script>
   $(document).ready(function(){
     $("#fruits").selectable({filter:".yes"});
+    /*$("#fruits").selectable({cancel:".no"});*/
   });
+  /*filter yes and cancel no do the same thing*/
   /*using the selectable method alone wont make any functionality, you actually need to pass a functon and ask it to do something*/
   </script>
 </head>
