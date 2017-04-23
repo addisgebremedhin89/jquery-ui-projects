@@ -39,9 +39,10 @@
   <script>
   $(document).ready(function(){
     $("#fruits").selectable({filter:".yes"});
-    /*$("#fruits").selectable({cancel:".no"});*/
+    /*$("#fruits").selectable({cancel:".no"});
+      $(".no").selectable({disable:true});*/
   });
-  /*filter yes and cancel no do the same thing*/
+  /*filter yes and cancel no do the same thing, disable requires you to select the item you want to make non selectable*/
   /*using the selectable method alone wont make any functionality, you actually need to pass a functon and ask it to do something*/
   </script>
 </head>
