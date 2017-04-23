@@ -18,7 +18,7 @@
     font-size:20px;
     text-align:center;
   }
-  #fruits.ui-selecting
+  /*#fruits.ui-selecting
   {
     background:purple;
     color:white;
@@ -28,7 +28,7 @@
     background:maroon;
     color:white;
     font-size:25px;
-  }
+  }*/
   
   </style>
   
@@ -37,24 +37,24 @@
   <script src="jquery-ui.js"></script>
 
   <script>
-  $(document).ready(functon(){
-    $("#fruits").selectable();
-  /*using the selectable method alone wont make any functionality, you actually need to pass a functon and ask it to do something*/
+  $(document).ready(function(){
+    $("#fruits").selectable({filter:".yes"});
   });
+  /*using the selectable method alone wont make any functionality, you actually need to pass a functon and ask it to do something*/
   </script>
 </head>
 
 <body>
 
 <ol id="fruits">
-  <li>Mango</li>
-  <li>Apple</li>
-  <li>Strawberry</li>
-  <li>Banana</li>
-  <li>Cherry</li>
-  <li>Papaya</li>
-  <li>Orange</li>
-  <li>Grapes</li>
+  <li class="yes" id="mango">Mango</li>
+  <li class="no" id="apple">Apple</li>
+  <li class="no" id="strawberry">Strawberry</li>
+  <li class="yes" id="banana">Banana</li>
+  <li class="no" id="cherry">Cherry</li>
+  <li class="yes" id="papaya">Papaya</li>
+  <li class="yes" id="orange">Orange</li>
+  <li class="no" id="grapes">Grapes</li>
 </ol>
 
 </body>
