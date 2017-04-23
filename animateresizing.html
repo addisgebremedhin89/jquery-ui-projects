@@ -19,9 +19,9 @@
 
   <script>
     $(document).ready(function(){
-      $("#box1").resizable({animate:true, animateDuration: "fast"});
+      $("#box1").resizable({animate:true, animateDuration: "fast", animateEasing: "linear"});
       
-    });/*by setting the value of option animate to true you apply an animation to the resizing function, for animate Duration you have 3 value options slow fast or a number in milliseconds*/
+    });/*by setting the value of option animate to true you apply an animation to the resizing function, for animate Duration you have 3 value options slow fast or a number in milliseconds. For animateEasing option you have the choice of value linear among a few others and for this value the animation duration will be linear so it will resize at the same pace each growth*/
   </script>
 </head>
 
