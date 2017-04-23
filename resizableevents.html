@@ -33,7 +33,8 @@
           $("#status").text("Resizing created!!!");
         },
         start:function(){
-          $("#status").html("Resizing started!!!");
+          /*$("#status").html("Resizing started!!!");*/
+          $(this).css("background", "blue")
         },
         resize:function(){
           $("#status").html("Getting resized!!!");
