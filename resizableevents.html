@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resizable: Manage Events</title>
+  <!--options are create start resize stop-->
+  <!--create event is triggered when we create a resizable-->
+  <!--start event is triggered when we start resizing-->
+  <!--resize event is triggered during the resizing-->
+  <!--stop eveent is triggered when we stop resizing-->
+  <style>
+    #box1
+    {
+      width: 100px;
+      height: 100px;
+      background: pink;
+      margin: 10px;
+    }
+    #main, #area
+    {
+      float: left;
+      margin: 20px;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="jquery-ui.css">
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#box1").resizable({
+        create:function(){
+          $("#status").text("Resizing created!!!");
+        },
+        start:function(){
+          $("#status").html("Resizing started!!!");
+        },
+        resize:function(){
+          $("#status").html("Getting resized!!!");
+        },
+        stop:function(){
+          $("#status").html("Resizing stopped!!!");
+        },
+      });
+    });
+  </script>
+</head>
+
+<body>
+<div id="box1" class="box"></div>
+<div id="status"></div>
+</body>
+
+
+</html>
