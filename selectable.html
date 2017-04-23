@@ -29,6 +29,17 @@
     color:white;
     font-size:25px;
   }
+  #hint
+  {
+    display: none;
+    position:absolute;
+    background:blue;
+    border:3px solid gray;
+    border-radius:5px;
+    color:white;
+    padding:10px;
+    
+  }
   
   </style>
   
@@ -38,7 +49,25 @@
 
   <script>
   $(document).ready(function(){
-    $("#fruits").selectable({filter:".yes"});
+    $("#fruits").selectable({
+      start:function(e){
+        $("#hint").css({
+          display:"inline",
+          left:e.pageX,
+          top:e.pageY
+        }).fadeOut(3000);
+    },
+      selected(event, ui){
+          //alert($(ui.selected).text());
+        
+      },
+      stop:function(){
+      $("#items").text("");
+       $(".ui-selected").each(function(key, value){
+         $("#items").append(value.innerHTML + "<br />");
+       });
+      }});
+    /*$("#fruits").selectable({filter:".yes"});*/
     /*$("#fruits").selectable({cancel:".no"});
       $(".no").selectable({disable:true});*/
   });
@@ -60,6 +89,9 @@
   <li class="no" id="grapes">Grapes</li>
 </ol>
 
+<div id="hint">To select multiple items, click Ctrl and Select or Drag the lasso</div>
+<p><b>Items Selected</b></p>
+<div id="items"></div>
 </body>
 
 
