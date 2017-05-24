@@ -19,32 +19,21 @@
 
   <script>
     $(document).ready(function(){
-      $("#btnCreate").click(function(){
-        $("#item").draggable({create:function(){
-          alert("A draggable element is created!!!");
-        }, /*create event is triggered: item element becomes draggable when create button clicked*/
-          start:function(){
-            $("#item").css("background", "orange");
-        },/start event: *when element dragged color changes*/
-          drag:function(){
-            $("#status").html("The element is moving!!");
-          },/*drag event triggered*/
-          stop:function(){
-            $("#status").html("The element stopped moving!!");
-        }});/*stop event triggered*/
-      });
+
     });
   </script>
 </head>
 
 <body>
 
-<div id="item"></div>
-
-<button id="btnCreate">Create</button>
-
-<div id="status"></div>
-
+  <div id="details">
+    <h2>jQuery</h2>
+    <p>jQuery is a popular Javascript library which simplifies Javascript programming</p>
+    <h2>jQuery UI</h2>
+    <p>JQuery User Interface is built on the top of jQuery. It is useful to design highly interactiable web applications</p>
+    <h2>jQuery Mobile</h2>
+    <p>jQuery Mobile is a HTML5-based user interface system designed to make responsive web sites and apps that are accessible on all smartphone, tablet and desktop devices</p>
+  </div>
 </body>
 
 
