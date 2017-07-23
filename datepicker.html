@@ -15,8 +15,10 @@
   <script>
                  
   $(document).ready(function(){
-    $("#calendar").datepicker({minDate:"+1m +3d",
-                               maxDate:"3m});
+    $("#calendar").datepicker({beforeShowDay: $.datepicker.noWeekends});
+        /*var weekEnds = $.datepicker.noWeekends(date);
+        var weekDays = [!weekEnds[0]];
+        return weekDays;*/
 });
 
   </script>
