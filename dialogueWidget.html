@@ -19,20 +19,29 @@
   <script>
                  
   $(document).ready(function(){
-      $("#overlay").dialog({buttons:
-      {Yes:function(){alert("Yes, We are going to proceed!!!")},
-        No:function(){alert("OK, We will not proceed.");}
-      }});
+      $("#overlay").dialog({buttons:[
+        
+                                     text:"Cancel",
+                                     icons:{primary:"ui-icon-closethick"},
+                                     click:function(){$(this).dialog("close");}
+                                     mouseover:function(){alert("mouseover");
+                                    },
+                                    {
+                                     {text:"Delete",
+                                     icons:{primary:"ui-icon-check"},
+                                     click:function(){alert("All the items are deleted!!");}
+                                     }]
+      
+      });
+      });
 
   </script>
 
   </head>
   <body>
-    First Name: <input id="first" type="text" /><br />
-    Last Name: <input id="last" type="text" /><br />
-    <button id="btnSubmit">Submit</button>
+
     <div id="overlay" title="Confirmation">
-      <div>Do you want to proceed?</div>
+      <div>Are you sure you want to delete the items permanently? You cannot undo this operation!</div>
       </div>
 
   </body>
