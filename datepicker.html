@@ -18,17 +18,15 @@
   <script>
                  
   $(document).ready(function(){
-    $("#calendar").datepicker({onSelect:function(dateString, datePicker){
-      $("#result").html("You selected " + dateString);
-    }});
+    $("#calendar").datepicker("dialog", null, function(dateString, datePicker)
+                              {$("#calendar").val(dateString)}, null, [150, 50]);
     
-});
+  });
 
   </script>
 
   </head>
   <body>
-    <div id="result"></div>
-    Date of Appointment: <div id="calenar"></div>
+    Date of Appointment: <input type="text" id="calendar" />
   </body>
 </html>
