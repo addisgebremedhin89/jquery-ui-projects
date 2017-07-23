@@ -19,16 +19,21 @@
   <script>
                  
   $(document).ready(function(){
-      $("#overlay").dialog({closeOnEscape:false, draggable:false, resizable:false, autoOpen:false}
+      $("#overlay").dialog({modal:true});
+      $("#btnSubmit").click(function(){
+          alert("Hi "+ $("#first").val() + " " + $("#last").val());
       })
   });
   </script>
 
   </head>
   <body>
+    First Name: <input id="first" type="text" /><br />
+    Last Name: <input id="last" type="text" /><br />
+    <button id="btnSubmit">Submit</button>
     <div id="overlay" title="First Dialog">
       <div>This is the first dialog that displays content in an interactive overlay</div>
       </div>
-    <div id="attach">Attach</div>
+
   </body>
 </html>
