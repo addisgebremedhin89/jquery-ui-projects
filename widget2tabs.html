@@ -4,8 +4,8 @@
   <title>Introduction to Tabs Widgets</title>
   <style>
     #details {
-      width: 450px;
-      margin:15px;
+      width: 600px;
+      margin: 15px;
     }
     
     p {
@@ -23,14 +23,28 @@
     $("#details").tabs({hide:{duration:2000, effect: "explode"},
                   show:{duration:2000, effect:"highlight"},
                   beforeActivate:function(event, ui){
-                    alert("Old Tab:" + $(ui.oldTab).text() + "\n" +
+                    alert("BEFORE ACTIVATE Old Tab:" + $(ui.oldTab).text() + "\n" +
                           "New Tab:" + $(ui.newTab).text() + "\n" +
                           "Old Panel:" + $(ui.oldPanel).text() + "\n"+
                           "New Panel:" + $(ui.newTab).text());
-                  }});
+                  }
+      
+                  activate:function(){
+                    alert("ACTIVATE New Tab is activated!!");
+                  }
+                  beforeLoad:function(event, ui){
+                    alert("BEFORE LOAD");
+                    ui.jqXHR.fail(function(){
+                      $(ui.panel).html("Error in loading the tab");
+                    });
+                  },
+                  load:function(event, ui){
+                    alert("Tab:" + $(ui.tab).text()+ "\n" +
+                              "Panel:" +$(ui.panel).text());
+                    }});
   });
 
-      beforeActivate
+      /*beforeActivate
       ui --> newTab, oldTab, newPanel, oldPanel
       
       activate
@@ -40,7 +54,7 @@
       ui --> tab, panel, jqXHR, ajaxSettings
       
       load
-      ui --> tab, panel, jqXHR, ajaxSettings
+      ui --> tab, panel, jqXHR, ajaxSettings*/
       
   </script>
 </head>
@@ -49,8 +63,9 @@
     <div id="details">
       <ul>
         <li><a href="#jquery">jQuery</a></li>
-        <li><a href="#ui">jQuery UI</a></li>
-        <li><a href="#mobile">jQuery Mobile</a></li>
+        <li><a href="http://localhost/UI/trial.html">HTML Page</a></li>
+        <li><a href="http://localhost/UI/test-ajax.txt">Text File</a></li>
+        <li><a href="http://localhost/UI/text.htmt">Broken</a></li>
       </ul>
       <h2>jQuery</h2>
       <p id="jquery">jQuery is a popular JavaScript library which simplifies JavaScript programming</p>
