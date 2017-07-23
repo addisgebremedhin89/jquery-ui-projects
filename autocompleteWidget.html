@@ -27,20 +27,9 @@
                  {label: "India",value:"Indian rupee"},
                  ];
                  
-  $(document).ready(function(){
-    $("#countries").autocomplete({source: function(request, response){
-      var filterArray = $.map(countries, function(element){
-        if(element.toUpperCase().indexOf(request.term.toUpperCase()) == 0)
-        {
-          return element;
-        }
-        else
-        {
-          return null;
-        }
-      });
-      reponse(filteArray);
-    }});
+  $(document).ready(function(){, autoFocus
+    $("#countries").autocomplete({source: currency, minLength:2, autoFocus:true, delay,1000});
+
   
  });
       
