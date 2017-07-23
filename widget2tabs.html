@@ -20,9 +20,28 @@
 
   <script>
   $(document).ready(function(){
-    $("#details").tabs({active:false, collapsible:true})
+    $("#details").tabs({hide:{duration:2000, effect: "explode"},
+                  show:{duration:2000, effect:"highlight"},
+                  beforeActivate:function(event, ui){
+                    alert("Old Tab:" + $(ui.oldTab).text() + "\n" +
+                          "New Tab:" + $(ui.newTab).text() + "\n" +
+                          "Old Panel:" + $(ui.oldPanel).text() + "\n"+
+                          "New Panel:" + $(ui.newTab).text());
+                  }});
   });
 
+      beforeActivate
+      ui --> newTab, oldTab, newPanel, oldPanel
+      
+      activate
+      ui --> newTab, oldTab, newPanel, oldPanel
+      
+      beforeLoad
+      ui --> tab, panel, jqXHR, ajaxSettings
+      
+      load
+      ui --> tab, panel, jqXHR, ajaxSettings
+      
   </script>
 </head>
 
