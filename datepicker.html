@@ -18,29 +18,14 @@
   <script>
                  
   $(document).ready(function(){
-    var holidays = ["1-1-2016", "4-17-2016", "24-11-2016", "25-12-2016"];
-    $("#calendar").datepicker({beforeShowDay: function(date){
-      var day = date.getDay();
-      var nonSelectableDate = $.datepicker.formatDate("d-m-yy", date);
-      if (day === 0)
-      {
-        return [true, "styleholiday"];
-    }
-    else if (holidays.indexOf(nonSelectableDate) != -1)
-    {
-      return [false, (holidays.indexOf(nonSelectable)==-1)?"":"styleholiday"];
-    }
-    else
-    {
-      return [true];
-    }
+    $("#calendar").datepicker({duration:5000, showAnim:"explode"});
 });
 
   </script>
 
   </head>
   <body>
-    Date of Appointment: <input id="calendar" type="text" />
+    Date of Birth: <input id="calendar" type="text" /><br />
 
   </body>
 </html>
