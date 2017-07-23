@@ -15,10 +15,30 @@
   <script>
                  
   $(document).ready(function(){
-    $("#calendar").datepicker({beforeShowDay: $.datepicker.noWeekends});
-        /*var weekEnds = $.datepicker.noWeekends(date);
-        var weekDays = [!weekEnds[0]];
-        return weekDays;*/
+    var holidays = ["1-1-2016", "4-17-2016", "24-11-2016", "25-12-2016"];
+    $("#calendar").datepicker({beforeShowDay: function(date){
+      var d = date.getDate();
+      var m = date.getMonth();
+      var y = date.getFullYear();
+      var nonSelectable = d + "-" + (m+1) + "-" + y;
+      for(var i=0; i<holidays.length; i++)
+      {
+        if($.inArray(nonSelectableDate, holidays) != -1)
+        {
+          return [false];
+        }
+      }
+      return [true];
+      
+      /*var day = date.getDay();
+      if (day === 5)
+      {
+        return [false];
+    }
+    else
+    {
+      
+    }*/
 });
 
   </script>
