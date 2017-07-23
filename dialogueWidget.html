@@ -19,7 +19,7 @@
   <script>
                  
   $(document).ready(function(){
-      $("#overlay").dialog({position:{of:"#attach"}
+      $("#overlay").dialog({closeOnEscape:false, draggable:false, resizable:false, autoOpen:false}
       })
   });
   </script>
@@ -28,7 +28,7 @@
   <body>
     <div id="overlay" title="First Dialog">
       <div>This is the first dialog that displays content in an interactive overlay</div>
-      
+      </div>
     <div id="attach">Attach</div>
   </body>
 </html>
