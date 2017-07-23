@@ -15,14 +15,15 @@
   <script>
                  
   $(document).ready(function(){
-    $("#calendar").datepicker();
+    $("#calendar").datepicker({minDate:"+1m +3d",
+                               maxDate:"3m});
 });
 
   </script>
 
   </head>
   <body>
-    Date of Birth: <input id="calendar" type="text" />
+    Date of Appointment: <input id="calendar" type="text" />
 
   </body>
 </html>
