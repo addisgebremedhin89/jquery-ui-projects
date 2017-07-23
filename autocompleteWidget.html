@@ -11,23 +11,24 @@
   <script src="jquery-ui.js"></script>
 
   <script>
-  var country = ["Angola",
-                 "Cambodia",
-                 "Germany",
-                 "Kuwait",
-                 "Nepal",
-                 "Switzerland",
-                 "Zimbabwe",
-                 "United Kingdom",
-                 "Sweden",
-                 "Philippines",
-                 "Malaysia",
-                 "Liberia",
-                 "India"
+  var currency = [
+                 {label: "Angola",value:"Angolan kwanza"},
+                 {label: "Cambodia",value:"Cambodian riel"},
+                 {label: "Germany",value:"European euro"},
+                 {label: "Kuwait",value:"Kuwaiti dinar"},
+                 {label: "Nepal",value:"Nepalese rupee"},
+                 {label: "Switzerland",value:"Swiss franc"},
+                 {label: "Zimbabwe",value:"United States dollar"},
+                 {label: "United Kingdom",value:"Pound sterling"},
+                 {label: "Sweden",value:"Swedish krona"},
+                 {label: "Philippines",value:"Philippine peso"},
+                 {label: "Malaysia",value:"Malaysian ringgit"},
+                 {label: "Liberia",value:"Liberian dollar"},
+                 {label: "India",value:"Indian rupee"},
                  ];
                  
   $(document).ready(function(){
-    $("#countries").autocomplete({source:country});
+    $("#countries").autocomplete({source:currency});
   
  });
       
