@@ -31,9 +31,18 @@
                  {label: "India",value:"Indian rupee"},
                  ];
                  
-  $(document).ready(){
-    $("#countries").autocomplete({source: currency, position:{of:"#space", at:"bottom center"}});
-  
+  $(document).ready(function(){
+    $("#country").autocomplete({source: currency,
+        create:function(){alert("The autocomplete is created");},
+        change:function(){alert("The textbox content is changed");},
+        search:function(){alert("The search is aboutto begin");},
+        response:function(){alert("The result is ready");},
+        open:function(){alert("The suggestion list is displayed");},
+        close:function(){alert("The suggestion list is closed");},
+        select:function(event,ui){
+          $("#result").text((ui.item.label) + "'s currency is " + (ui.item.value));
+          }
+        });
  });
       
   </script>
@@ -41,8 +50,8 @@
 
 <body>
   <label for="countries">Countries</label>
-  <input id="countries" type="text" />
-  <div id="space"></div>
+  <input id="country" type="text" />
+  <div id="resule"></div>
 </body>
 
 
