@@ -19,21 +19,18 @@
   <script>
                  
   $(document).ready(function(){
-      $("#overlay").dialog({buttons:[
-        
-                                     text:"Cancel",
-                                     icons:{primary:"ui-icon-closethick"},
-                                     click:function(){$(this).dialog("close");}
-                                     mouseover:function(){alert("mouseover");
-                                    },
-                                    {
-                                     {text:"Delete",
-                                     icons:{primary:"ui-icon-check"},
-                                     click:function(){alert("All the items are deleted!!");}
-                                     }]
-      
-      });
-      });
+      $("#overlay").dialog({create:function(){alert("The dialog is created");},
+                            open:function()alert("The dialog is opened");},
+                            focus:function()alert("The dialog got focus");},
+                            dragStart:function(){$("#status1").text("dragging started");},
+                            drag:function(){$("#status2").text("The dialog is moving");},
+                            dragStop:function(){$("#status1").text("dragging stopped");$("#status2").text("");},
+                            resizeStart:function(){$("#status1").text("resize started");},
+                            resize:function(){$("#status2").text("The size is changing");},
+                            resizeStop:function(){$("#status1").text("resize stopped");$("#status2").text("");},
+                            beforeClose:function()alert("The dialog is about to close");},
+                            close:function(){$("#status1").text("The dialog is closed");}});
+          });
 
   </script>
 
