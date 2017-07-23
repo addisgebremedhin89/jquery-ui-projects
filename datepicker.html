@@ -18,11 +18,9 @@
   <script>
                  
   $(document).ready(function(){
-    $("#calendar").datepicker({appendText:"Select your birthday to see the                magic",
-                   //dateFormat:"Selecte'd D'ate: dd/mm/yy",
-                   autoSize:true},
-                   altField:"#birthay",
-                   altFormat:"Y'o'u were b'o'rn 'o'n a DD");
+    $("#calendar").datepicker({onSelect:function(dateString, datePicker){
+      $("#result").html("You selected " + dateString);
+    }});
     
 });
 
@@ -30,7 +28,7 @@
 
   </head>
   <body>
-    Date of Appointment: <input id="calendar" type="text" /><br />
-    <input type="text" id="birthday" size="50" disabled />
+    <div id="result"></div>
+    Date of Appointment: <div id="calenar"></div>
   </body>
 </html>
