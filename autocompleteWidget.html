@@ -3,7 +3,11 @@
 <head>
   <title>Widget: Autocomplete</title>
   <style>
-
+      #space
+      {
+        width:100px;
+        height:100px;
+      }
   </style>
   
   <link rel="stylesheet" href="jquery-ui.css">
@@ -27,9 +31,8 @@
                  {label: "India",value:"Indian rupee"},
                  ];
                  
-  $(document).ready(function(){, autoFocus
-    $("#countries").autocomplete({source: currency, minLength:2, autoFocus:true, delay,1000});
-
+  $(document).ready(){
+    $("#countries").autocomplete({source: currency, position:{of:"#space", at:"bottom center"}});
   
  });
       
@@ -39,6 +42,7 @@
 <body>
   <label for="countries">Countries</label>
   <input id="countries" type="text" />
+  <div id="space"></div>
 </body>
 
 
