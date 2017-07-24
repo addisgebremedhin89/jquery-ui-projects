@@ -24,18 +24,43 @@
 
   <script>
   $(document).ready(function(){
-      $("#myMenu").menu();
+      var item;
+      $("#myMenu").menu({
+              focus:function(event, ui){
+                item = ui.item.find(".ui-state-active").text();
+              }
+      });
       $("#btnRefresh").click(function(){
         $("#myMenu").append("<li><a href='#'>New Item</a></li>");
         //$("#myMenu").menu("refresh");
       });
       $("#btnExpand").click(function(){
-        $("#myMenu").menu("focus", null, $("#myMenu > li:nth-child(1)"));
-        $("#myMenu").menu("next");
+        $("#myMenu").menu("focus", null, $("#myMenu > li:nth-child(2)"));
+        $("#myMenu").menu("previous");
         $("#myMenu").menu("expand");
       });
       $("#btnCollapse").click(function(){
         $("#myMenu").menu("collapseAll");
+      });
+      $("#btnIsLast").click(function(){
+        $("#myMenu").menu("focus", null, $("#myMenu > li:nth-child(2)"));
+        $("#myMenu").menu("expand");
+        $("#myMenu").menu("focus", null, $("#myMenu > li:nth-child(2) > ul > li:nth-child(1)"));
+        $("#myMenu").menu("expand");
+        $("#myMenu").menu("focus", null, $("#myMenu > li:nth-child(1) > ul > li:nth-child(2)"));
+        $("#myMenu").menu("expand");
+        var isFirst = $("#myMenu").menu("isLastItem");
+        var msg;
+        if (isFirst == true)
+        {
+          msg = " is the last menu item."
+        }
+        else
+        {
+          msg = " is not the last menu item."
+        }
+        }
+        alert(item + msg);
       });
 });
   </script>
@@ -80,6 +105,7 @@
     <button id="btnRefresh">Refresh</button>
     <button id="btnExpand">Expand</button>
     <button id="btnCollapse">Collapse</button>
+    <button id="btnIsLast">Is Last</button>
   </body>
   
 </html>
