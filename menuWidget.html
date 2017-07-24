@@ -4,8 +4,11 @@
     <title>Widget: Menu</title>
     <style>
     
-    #myMenu {
+    .ui-menu {
       width: 350px;
+    }
+    a {
+      text-decoration: none;
     }
     </style>
 
@@ -16,7 +19,7 @@
 
   <script>
   $(document).ready(function(){
-      $("#myMenu").menu();
+      $("#myMenu").menu({icons:{submenu:"ui-icon-circle-triangle-e"}});
 });
   </script>
 
@@ -29,16 +32,20 @@
           <li><a href="#">All Books</a></li>
           <li><a href="#">New Releases</a></li>
           <li><a href="#">Best Sellers</a></li>
-          <li><a href="#">eBooks</a></li>
+          <li><a href="#"><span class="ui-icon ui-icon-bookmark"></span>eBooks</a></li>
         </ul>
       </li>
     
       <li><a href="#">Computers & Accessories</a>
         <ul>
           <li><a href="#">Computers</a></li>
+              <ul>
+                <li><a href="#">Desktops</a></li>
+                <li><a href="#">Laptops</a></li>
+              </ul>
           <li><a href="#">Pen Drives</a></li>
           <li><a href="#">Hard Drives</a></li>
-          <li><a href="#">Printers</a></li>
+          <li><a href="#"><span class="ui-icon ui-icon-print"></span>Printers</a></li>
         </ul>
       </li>
     
