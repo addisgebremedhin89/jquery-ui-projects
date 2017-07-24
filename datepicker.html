@@ -14,13 +14,15 @@
   <link rel="stylesheet" href="jquery-ui.css">
   <script src="jquery.js"></script>
   <script src="jquery-ui.js"></script>
+  <script src="ar.js"></script>
+  <script src="fr.js"></script>
 
   <script>
                  
   $(document).ready(function(){
-    $("#calendar").datepicker("dialog", null, function(dateString, datePicker)
-                              {$("#calendar").val(dateString)}, null, [150, 50]);
-    
+    $("#calendar").datepicker();
+    //$("#calendar").datepicker("option", $.datepicker.regional["ar"])
+    //$.datepicker.setDefaults($.datepicker.regional["ar"]);
   });
 
   </script>
