@@ -14,16 +14,15 @@
 
   <script>
   $(document).ready(function(){
-      $("#mySlider").slider({min:50, max:75, value:30
+      $("#range").slider({value:50, range:"max",
                      change:function(event, ui){
                        $("#current").text(ui.value);
                      }
       });
-      var min = $("#mySlider").slider("option", "min");
-      var max = $("#mySlider").slider("option", "max");
-      var current = $("#mySlider").slider("option", "max");
+      var min = $("#range").slider("option", "min");
+      var max = $("#range").slider("option", "max");
+      var current = $("#range").slider("option", "value");
       $("#current").text(current);
-      alert("Min: " + min + " Max: " + max);
     });
   </script>
 
@@ -31,7 +30,7 @@
   <body>
     
     Value:<span id="current"></span>
-    <div id="mySlider"></div>
+    <div id="range"></div>
 
   </body>
 </html>
