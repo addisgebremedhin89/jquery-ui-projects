@@ -14,15 +14,13 @@
 
   <script>
   $(document).ready(function(){
-      $("#range").slider({value:50, range:true, values:[25, 75],
+      $("#range").slider({animate:"fast", orientation:"vertical",
                      change:function(event, ui){
-                       $("#current").text("$" + ui.values[0] + " - $" + ui.values[1]);
+                       $("#current").text(ui.value);
                      }
       });
-      var min = $("#range").slider("option", "min");
-      var max = $("#range").slider("option", "max");
       var current = $("#range").slider("option", "value");
-      $("#current").text("$" + current[0] + " - " + current[1]);
+      $("#current").text(current);
     });
   </script>
 
