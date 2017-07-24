@@ -10,6 +10,11 @@
     a {
       text-decoration: none;
     }
+    #parent {
+      width:150px;
+      height:150px;
+      border:5px solid black;
+    }
     </style>
 
   
@@ -19,7 +24,10 @@
 
   <script>
   $(document).ready(function(){
-      $("#myMenu").menu({icons:{submenu:"ui-icon-circle-triangle-e"}});
+      $("#myMenu").menu({
+          icons:{submenu:"ui-icon-circle-triangle-e"},
+          position:{of:"#parent",at:"left+200 top+50"}
+      });
 });
   </script>
 
@@ -56,6 +64,8 @@
         </ul>
       </li>
     </ul>
+    
+    <div id="parent"></div>
   </body>
   
 </html>
