@@ -24,9 +24,10 @@
 
   <script>
   $(document).ready(function(){
-      $("#myMenu").menu({focus:function(event, ui){$("#result").text("Focus is on: " + ui.item.find(".ui-state-active").text());},
-                         select:function(event, ui){$("#result").text("You clicked on: " + ui.item.find(".ui-state-active").text());},
-                         blur:function(){$("#lost").text("Focus lost")}
+      $("#myMenu").menu();
+      $("#btnRefresh").click(function(){
+        $("#myMenu").append("<li><a href='#'>New Item</a></li>");
+        $("#myMenu").menu("refresh");
       });
 });
   </script>
@@ -68,9 +69,8 @@
         </ul>
       </li>
     </ul>
-    
-    <div id="result"></div>
-    <div id="lost"></div>
+    <button id="btnRefresh">Refresh</button>
+  
     </body>
   
 </html>
