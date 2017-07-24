@@ -14,12 +14,23 @@
 
   <script>
   $(document).ready(function(){
-      $("#mySlider").slider();
- });
+      $("#mySlider").slider({min:50, max:75, value:30
+                     change:function(event, ui){
+                       $("#current").text(ui.value);
+                     }
+      });
+      var min = $("#mySlider").slider("option", "min");
+      var max = $("#mySlider").slider("option", "max");
+      var current = $("#mySlider").slider("option", "max");
+      $("#current").text(current);
+      alert("Min: " + min + " Max: " + max);
+    });
   </script>
 
   </head>
   <body>
+    
+    Value:<span id="current"></span>
     <div id="mySlider"></div>
 
   </body>
