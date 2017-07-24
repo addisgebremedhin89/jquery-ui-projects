@@ -27,7 +27,15 @@
       $("#myMenu").menu();
       $("#btnRefresh").click(function(){
         $("#myMenu").append("<li><a href='#'>New Item</a></li>");
-        $("#myMenu").menu("refresh");
+        //$("#myMenu").menu("refresh");
+      });
+      $("#btnExpand").click(function(){
+        $("#myMenu").menu("focus", null, $("#myMenu > li:nth-child(1)"));
+        $("#myMenu").menu("next");
+        $("#myMenu").menu("expand");
+      });
+      $("#btnCollapse").click(function(){
+        $("#myMenu").menu("collapseAll");
       });
 });
   </script>
@@ -70,7 +78,8 @@
       </li>
     </ul>
     <button id="btnRefresh">Refresh</button>
-  
-    </body>
+    <button id="btnExpand">Expand</button>
+    <button id="btnCollapse">Collapse</button>
+  </body>
   
 </html>
