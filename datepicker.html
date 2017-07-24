@@ -18,16 +18,27 @@
   <script>
                  
   $(document).ready(function(){
-    $("#calendar").datepicker({/*changeMonth: true,
-                               changeYear: true,
-                               yearRange: "c-100: c+1"*/
-                               showOtherMonths: true,
-                               selectOtherMonths: true,
-                               defaultDate: +7
-                               numberofMonths:[3, 3]
-                                
-    })
-      
+    $("#calendar").datepicker({onSelect: function(dateString){
+        var selectedDate = $("#calendar").datepicker("getDate");
+        alert("The date selected is" + dateString);
+    }
+      onClose:function(){alert("The date picker is about to close");},
+      onChangeMonthYear:function(year, month, datepicker){
+        var monthArr = ["January", "February",
+                        "March", "April",
+                        "May", "June",
+                        "July", "August",
+                        "September", "October",
+                        "November", "December"];
+        alert("Month: " + monthArr[month-1]+ "\n Year: " + year);}
+    });
+    $("#calendar").datepicker("setDate", "08/21/2016");
+    #("#btnShow").click(function(){
+      $("#calendar").datepicker("show");
+    });
+    $("btnHide").click(function(){
+      $("#calendar").datepicker("hide");
+    });
   });
 
   </script>
