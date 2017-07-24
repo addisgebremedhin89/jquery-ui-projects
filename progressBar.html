@@ -4,10 +4,21 @@
     <title>Widget: Progress Bar</title>
     <style>
     
-    #bar1 #bar2 {
-      margin-bottom: 100px;
+    .ui-progressbar {
+      border-radius: 25px;
     }
 
+    .ui-progressbar-value {
+      border-radius: 25px;
+      text-align: right;
+      color: black;
+      font-weight: normal;
+      }
+    
+    #maximum {
+      float: right;
+      margin-right: 15px;
+    }
     </style>
 
   
@@ -17,16 +28,18 @@
 
   <script>
   $(document).ready(function(){
-      $("#bar1").progressbar({value:10, max:50});
-      $("#bar2").progressbar({value:false});
-      alert($("#bar").progressbar("option", "max"));
-      );
-});
+      $("#bar").progressbar({value:20, max:50});
+      var maximum= $("#bar").progressbar("option", "max");
+      $("#maximum").text(maximum + "%");
+      var current= $("#bar").progressbar("option", "value");
+      $(".ui-progressbar-value").text(current + "%");
+    
+  });
   </script>
 
   </head>
   <body>
-    <div id="bar1"></div>
-    <div id="bar2"></div>
+    <div id="bar"><span id="maximum"></span></div>
+
   </body>
 </html>
