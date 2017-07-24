@@ -24,8 +24,9 @@
 
   <script>
   $(document).ready(function(){
-      $("#myMenu").menu({
-          items:"> :not(.ui-widget-header)"
+      $("#myMenu").menu({focus:function(event, ui){$("#result").text("Focus is on: " + ui.item.find(".ui-state-active").text());},
+                         select:function(event, ui){$("#result").text("You clicked on: " + ui.item.find(".ui-state-active").text());},
+                         blur:function(){$("#lost").text("Focus lost")}
       });
 });
   </script>
@@ -68,7 +69,8 @@
       </li>
     </ul>
     
-    <div id="parent"></div>
-  </body>
+    <div id="result"></div>
+    <div id="lost"></div>
+    </body>
   
 </html>
