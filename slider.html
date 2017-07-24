@@ -14,12 +14,21 @@
 
   <script>
   $(document).ready(function(){
-      $("#range").slider({animate:"fast", orientation:"vertical",
-                     change:function(event, ui){
+      $("#mySlider").slider({change:function(event, ui){
                        $("#current").text(ui.value);
-                     }
+                     },
+                     slide:function(){
+                       $("#changing").text(ui, value);
+                     },
+                     start:function(){
+                       alert("Sliding started!!")
+                     },
+                     stop:function(){
+                       alert("Sliding stopped!!")
+                     };
+                     
       });
-      var current = $("#range").slider("option", "value");
+      var current = $("#mySlider").slider("option", "value");
       $("#current").text(current);
     });
   </script>
@@ -27,8 +36,9 @@
   </head>
   <body>
     
-    Price Range:<span id="current"></span>
-    <div id="range"></div>
+    Value:<span id="current"></span>
+    Changing: <span id="changing"></span>
+    <div id="mySlider"></div>
 
   </body>
 </html>
