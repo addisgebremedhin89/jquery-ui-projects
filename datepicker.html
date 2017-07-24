@@ -14,15 +14,19 @@
   <link rel="stylesheet" href="jquery-ui.css">
   <script src="jquery.js"></script>
   <script src="jquery-ui.js"></script>
-  <script src="ar.js"></script>
-  <script src="fr.js"></script>
 
   <script>
                  
   $(document).ready(function(){
-    $("#calendar").datepicker();
-    //$("#calendar").datepicker("option", $.datepicker.regional["ar"])
-    //$.datepicker.setDefaults($.datepicker.regional["ar"]);
+    $("#calendar").datepicker({dateFormat:"DD",
+                   monthNameShort:["JA", "FE", "MA", "AP", "MAY", "JU", "JUL", "AU", "SE", "OC", "NO", "DE"]
+                   monthNames:["JANU", "FEBR", "MARC", "APRI", "MAYMAY", "JUNE", "JULY", "AUGU", "SEPT", "OCTO", "NOVE", "DECE"]
+                   dayNames: ["Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur", "Sun"],
+                   dayNamesMin: ["nja", "thi", "cho", "bud", "vya", "vel", "san"],
+                   dayNamesShort: ["Su", "M", "T", "W", "Th", "F", "Sa"]
+      
+    });
+;
   });
 
   </script>
