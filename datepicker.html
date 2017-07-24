@@ -18,28 +18,16 @@
   <script>
                  
   $(document).ready(function(){
-    $("#calendar").datepicker({dateFormat:"DD",
-                   /*monthNameShort:["JA", "FE", "MA", "AP", "MAY", "JU", "JUL", "AU", "SE", "OC", "NO", "DE"]
-                   monthNames:["JANU", "FEBR", "MARC", "APRI", "MAYMAY", "JUNE", "JULY", "AUGU", "SEPT", "OCTO", "NOVE", "DECE"]
-                   dayNames: ["Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur", "Sun"],
-                   dayNamesMin: ["nja", "thi", "cho", "bud", "vya", "vel", "san"],
-                   dayNamesShort: ["Su", "M", "T", "W", "Th", "F", "Sa"]*/
-                   firstDay:5,
-                   isRTL: true,
-                   showWeek: true,
-                   weekHeader: "W No:"
-                   yearSuffix: " AD ",
-                   showMonthAfterYear: true,
-                   showButtonPanel: true,
-                   currentText: "Now",
-                   closeText: "Close",
-                   goCurrent: true,
-                   prevText: "Previous"
-                   nextText: "Next",
-                   
+    $("#calendar").datepicker({/*changeMonth: true,
+                               changeYear: true,
+                               yearRange: "c-100: c+1"*/
+                               showOtherMonths: true,
+                               selectOtherMonths: true,
+                               defaultDate: +7
+                               numberofMonths:[3, 3]
+                                
+    })
       
-    });
-;
   });
 
   </script>
