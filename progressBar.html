@@ -28,11 +28,37 @@
 
   <script>
   $(document).ready(function(){
+      var newValue;
       $("#bar").progressbar({value:20, max:50});
       var maximum= $("#bar").progressbar("option", "max");
       $("#maximum").text(maximum + "%");
       var current= $("#bar").progressbar("option", "value");
       $(".ui-progressbar-value").text(current + "%");
+      $("button").click(function(){
+        current= $("#bar").progressbar("option", "value");
+        var id = $(this).attr("id");
+        if (id == "btnIncrement")
+        {
+          newValue = current + 10;
+        }
+        else
+        {
+          newValue = current - 10;
+        }
+        displayValue();
+      });
+      function displayValue()
+      {
+        $("#bar").progressbar("value", newValue);
+        if (newValue == maximum)
+        {
+            $(".ui-progressbar-value").text("");
+        }
+        else
+        {
+        $(".ui-progressbar-value").text(newValue + "%");
+      }
+      }
     
   });
   </script>
@@ -40,6 +66,7 @@
   </head>
   <body>
     <div id="bar"><span id="maximum"></span></div>
-
+    <button id="btnIncrement">+10%</button>
+    <button id="btnDecrement">-10%</button>
   </body>
 </html>
