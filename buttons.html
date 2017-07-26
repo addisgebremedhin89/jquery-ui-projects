@@ -14,14 +14,7 @@
     <script>
 
       $(document).ready(function(){
-
-          $("#btnButton, #btnSubmit, #btnLink").button();
-          $("#btnButton, #btnSubmit, #btnLink").click(function(){
-              alert("You clicked the element with id " + $(this).attr("id"));
-          });
-          $("#btnButton").button({icon:"ui-icon-tag", iconPosition:"end", label:"Using Option"});
-          $("#btnSubmit").button({disabled:true});
-          $("#btnLink").button({icon:"ui-icon-note", showLabel:false});
+        $("input").checkboxradio();
       });
     </script>
 
@@ -29,10 +22,25 @@
 
   <body>
     
-    <button id="btnButton">Normal</button>
-    <input type="submit" id="btnSubmit" value="Submit" />
-    <a id="btnLink">Link</a>
+    <fieldset>
+      <legend>Radio buttons</legend>
+      <input type="radio" id="jquery" name="jquerys" />
+      <label for="jquery">jQuery</label>
+      <input type="radio" id="ui" name="jquerys" />
+      <label for="ui">jQuery UI</label>
+      <input type="radio" id="mobile" name="jquerys" />
+      <label for="mobile">jQuery Mobile</label><br />
+    </fieldset>
 
+    <fieldset>
+      <input type="checkbox" id="jquery1" />
+      <label for="jquery1">jQuery</label>
+      <input type="checkbox" id="ui1" />
+      <label for="ui1">jQuery UI</label>
+      <input type="checkbox" id="mobile1" />
+      <label for="mobile1">jQuery Mobile</label><br />
+    </fieldset>
+    
   </body>
 
 </html>
