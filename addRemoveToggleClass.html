@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add/Remove/Toggle Class</title>
+    
+    <style>
+
+
+      div {
+        width:100px;
+        height:100px;
+        margin:100px;
+        border:2px dotted black;
+        background:pink;
+      }
+      
+      .changing {
+        width:200px;
+        height:200px;
+        border:5px solid green;
+        background:red;
+        border-radius:50%;
+      }
+      
+      .size {
+        width:200px;
+        height:200px;
+      }
+      
+      .coloring {
+        border:5px solid green;
+        background:red;
+      }
+      
+      .shape {
+
+        border-radius:50%;
+      }
+
+    </style>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+
+    <script>
+
+      $(document).ready(function(){
+          $("#btnAdd").click(function(){
+            $("div").addClass("size coloring shape", 3000, "linear", function()
+            {alert("I am a circle now!!!");});
+          });
+          $("#btnRemove").click(function(){
+            $("div").removeClass("coloring", 5000, "linear", function()
+            {alert("I am a square now!!!");});
+          });
+          $("#btnToggle").click(function(){
+            $("div").toggleClass("size coloring shape", 5000);
+            
+          });
+    });
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="box"></div>
+    <button id="btnAdd">Add Class</button>
+    <button id="btnRemove">Remove Class</button>
+    <button id="btnToggle">Toggle Class</button>
+  </body>
+
+</html>
