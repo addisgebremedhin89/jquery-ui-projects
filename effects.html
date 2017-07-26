@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Widget: Dialog</title>
+    
+    <style>
+      #box {
+        width:100px;
+        height: 100px;
+        border:2px solid black;
+        margin:100px;
+        background:red;
+      }
+
+    </style>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+
+    <script>
+
+      $(document).ready(function(){
+       /* $("#overlay").dialog({
+            hide:{effect:"pulsate", times:2, easing:"swing", duration:3000},
+            show:{effect:"shake", times:5, direction:"up", duration:3000}
+      });*/
+          $("#box").effect("shake", {times:2, direction:"up"}, 2000, function(){alert("The effect is over");
+            
+          });
+    });
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="box"></div>
+  </body>
+
+</html>
