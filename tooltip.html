@@ -25,11 +25,21 @@
 
   <script>
   $(document).ready(function(){
-    $(document).tooltip({items:"a",
+    $(document).tooltip({position:{at:"left+100 center"},
+                        items:"a",
                         content:function(){
                           return "<img src='sunflower.jpeg' />";
-                        }
-        
+                        },
+                        open:function(){$("status").append(" Tooltip is opened");},
+                        close:function(){$("status").append(" Tooltip is closed");}
+
+    });
+                        
+    $("#btnEnable").click(function(){
+        $("a").tooltip("enable");
+    });
+    $("#btnDisable").click(function(){
+        $("a").tooltip("disable");
     });
 });
   </script>
@@ -38,7 +48,11 @@
   <body>
 
     <p>Let's discuss <a href="#" title="Addis is smart and capabale!!!!"></a> in detail</p>
-    Password:<input type="text" id="pass" title="Password must contain at least one number"/>
+
+    <button id="btnEnable">Enable</button>
+    <button id="btnDisable">Disable</button>
+    <div id="status"></div>
    </body>
+   
   
 </html>
