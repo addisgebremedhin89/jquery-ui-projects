@@ -25,14 +25,19 @@
 
   <script>
   $(document).ready(function(){
-    $(document).tooltip({track:true, position:{at:"left top"}});
+    $(document).tooltip({items:"a",
+                        content:function(){
+                          return "<img src='sunflower.jpeg' />";
+                        }
+        
+    });
 });
   </script>
 
   </head>
   <body>
 
-    <p>Let's discuss <a href="#" title="Tooltips are unique!!!"></a> in detail</p>
+    <p>Let's discuss <a href="#" title="Addis is smart and capabale!!!!"></a> in detail</p>
     Password:<input type="text" id="pass" title="Password must contain at least one number"/>
    </body>
   
