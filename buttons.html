@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Widget: Buttons</title>
+    
+    <style>
+    
+
+    </style>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+
+    <script>
+
+      $(document).ready(function(){
+
+          $("#btnButton, #btnSubmit, #btnLink").button();
+          $("#btnButton, #btnSubmit, #btnLink").click(function(){
+              alert("You clicked the element with id " + $(this).attr("id"));
+          });
+          $("#btnButton").button({icon:"ui-icon-tag", iconPosition:"end", label:"Using Option"});
+          $("#btnSubmit").button({disabled:true});
+          $("#btnLink").button({icon:"ui-icon-note", showLabel:false});
+      });
+    </script>
+
+  </head>
+
+  <body>
+    
+    <button id="btnButton">Normal</button>
+    <input type="submit" id="btnSubmit" value="Submit" />
+    <a id="btnLink">Link</a>
+
+  </body>
+
+</html>
