@@ -14,15 +14,15 @@
     <script>
 
       $(document).ready(function(){
-          $("#jquerys").selectmenu({icons:{button:"ui-icon-plus"}, width:200,
-                        positon:{at:"left+100 top+200"}
+          $("#group").controlgroup({direction:"vertical",
+                items:{"button": "input[type=button], input[type=submit], input[type=reset], button",
+                "controlgroupLabel": ".ui-controlgroup-label",
+                "checkboxradio": "input[type='checkbox'], input[type='radio']",
+                "selectmenu": "select",
+                "spinner": ".ui-spinner-input"
+                }
+            
           });
-          $("#btnOpen").click(function(){
-              $("#jquerys").selectmenu("open");
-          })
-          $("#btnClose").click(function(){
-              $("#jquerys").selectmenu("close");
-          })
       });
     </script>
 
@@ -30,13 +30,34 @@
 
   <body>
     
-    <select id="jquerys">
-      <option value="jquery">jQuery</option>
-      <option value="jquery">jQuery UI</option>
-      <option value="jquery">jQuery Mobile</option>
-    </select>
-    <button id="btnOpen">Open</button>
-    <button id="btnClose">Close</button>
+    <div id="group">
+     
+     <select id="language">
+        <option>English</option>
+        <option>Spanish</option>
+        <option>French</option>
+        <option>Hindi</option>
+        <option>Chinese</option>
+        <option>Arabic</option>
+        <option>Russian</option>
+    </select><br />
+
+        <label for="jquery">jQuery</label>
+        <input type="radio" id="jquery" name="jquerys">
+        <label for="ui">jQuery UI</label>
+        <input type="radio" id="ui" name="jquerys">
+        <label for="mobile">jQuery Mobile</label>
+        <input type="radio" id="mobile" name="jquerys">
+    
+        <a>Click Here!!!</a>
+  
+        <label for="spinner" class="ui-controlgroup-label">Your age:</label>
+        <input id="spinner" type="text" class="ui-spinner-input" />
+        
+        <button>Book Now!</button>
+      
+    </div>
+    
   </body>
 
 </html>
