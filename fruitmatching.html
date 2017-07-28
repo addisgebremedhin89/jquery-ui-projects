@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fruit Matching Game</title>
+    
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+
+    <script>
+      var fruitsArr = ["myimages/apple.png",
+                       "myimages/kiwi.png",
+                       "myimages/pineapple.png",
+                       "myimages/watermelon.png",
+                       "myimages/orange.png",
+                       "myimages/strawberry.png",
+                       "myimages/banana.png"];
+      var namesArr = ["Apple", "Pineapple", "Orange", "Banana", "Strawberry", "Watermelon", "Kiwi"];
+      $(document).ready(function(){
+
+    });
+
+      function shuffle(arr)
+      {
+
+          return arr.sort(function(){
+            return .5 - Math.random()
+          });
+
+      }
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <div id="fruits"></div>
+    <div id="droparea"></div>
+
+
+  </body>
+
+</html>
