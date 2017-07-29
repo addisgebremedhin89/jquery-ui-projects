@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Train Enquiry System</title>
+    <link rel="stylesheet" href="js/jquery-ui.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    
+    <style>
+        #container, #table {
+          width: 400px;
+          height: 400px;
+          border: 2px solid black;
+          border-radius: 10px;
+          margin: 70px;
+          padding: 10px;
+          background: green;
+          float: left;
+        }
+        #table {
+          display: none;
+        }
+        
+        h2 {
+          text-align: center;
+          color: white;
+        }
+        
+        label {
+          color: white;
+          padding: 5px;
+          margin: 5px;
+          font-size: 25px;
+        }
+        
+        input {
+          width: 90%;
+          height: 25px;
+          border-radius: 10px;
+          font-size: 25px;
+          padding: 5px;
+          margin: 5px;
+        }
+        
+        #btnSearch {
+          border-radius: 10px;
+        }
+        
+        table {
+          width: 100%;
+          font-size: 25px;
+        }
+        
+        th {
+          border-bottom: 2px solid black;
+        }
+        td {
+          padding: 5px;
+          text-align: center;
+        }
+        #result {
+          margin: 0px auto;
+        }
+        
+        p {
+          font-size: 25px;
+        }
+    </style>
+
+    <script>
+          var stations = [
+      {label:"tyriyandrum", value:"TVN"},
+      {label:"Vellore", value:"VLR"},
+      {label:"Kottayam", value:"KYM"},
+      {label:"Hyderabad", value:"HDB"},
+      {label:"Ernakulam", value:"ERK"},
+      {label:"Thrissur", value:"THR"},
+      {label:"Mangalore", value:"MNG"},
+      {label:"Coimbattore", value:"CMT"}
+    ];
+    //details of trains: array of objects
+    var trains = [
+      {
+        name:"venad express",
+        number: 12652349,
+        stops: ["THR", "ERK", "KYM", "VLR"]
+      },
+      {
+        name:"trivandrum chennai express",
+        number: 021974,
+        stops: ["HDB", "ERK", "TVN", "MNG"]
+      },
+      {
+        name:"coimbatore express",
+        number: 248394,
+        stops: ["MNG", "CMT", "TVN", "MNG"]
+      },
+      {
+        name:"mangalore special",
+        number: 50932,
+        stops: ["HDB", "MNG", "TVN", "MNG"]
+      },
+    ];
+    
+    $(document).ready(function(){
+      $("#from, #to, #calendar").val("");
+      $("#btnSearch").click(function(){
+      var fromStation = $("#from").val().split(" - ")[1];
+      var toStation = $("#to").val().split(" - ")[1];
+      var trainsArr = [];
+      $.each(trains, function(index, value){
+        for(key in value)
+        {
+          if (key == "stops")
+          {
+            if (jQuery.inArray(fromStation, value[key]) != -1 &&
+            jQuery.inArray(toStation, value[key]) != -1)
+            {
+              trainsArr.push(value["number"]);
+              trainsArr.push(value["name"]);
+            }
+          }
+        }
+      });
+        var content;
+          if (trainsArr.length == 0)
+          {
+            content = "<p><b>Sorry!!! There is no train in this route!!!</b></p>";
+          }
+          else
+          {
+            content = "<table><tr><th>Train No:</th><th>Train Name:</th></tr>";
+            for( var j=0;j<trainsArr.length;)
+            {
+              var k = 1;
+              content += "<tr><td>" + trainsArr[j] + "</td><td>" + trainsArr[j+k] + "</td></tr>";
+              j = j + 2;
+            }
+            content += "</table>";
+          }
+            $("#result").html(content);
+            $("#table").css("display", "block");
+          });
+            $("#calendar").datepicker({dateFormat:"dd MM yy (DD)", minDate:new Date(), maxDate:"+2m"});
+            $("#btnSearch").button();
+            $("#from, #to").autocomplete({source:stations,
+            select:function(event, ui){
+              $(this).val(ui.item.label + " - " + ui.item.value);
+              return false;
+      }});
+    });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Find Trains</h2>
+        <label for="from">Leaving from:</label><br />
+        <input id="from" type="text" /><br /><br />
+        <label for="to">Going to:</label><br />
+        <input id="to" type="text" /><br /><br />
+        <label for="calendar">Date of travel:</label><br />
+        <input id="calendar" type="text" /><br /><br />
+        <button id="btnSearch">Search Trains</button>
+      </div>
+      <div id="table">
+      <div id="result"></div>
+    </div>
+  </body>
+</html>
+
